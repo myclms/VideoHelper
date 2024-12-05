@@ -1,0 +1,54 @@
+0.00	12.00	 In 1965, 17-year-old high school student Randy Garner stayed awake for 264 hours.
+12.00	16.00	 That's 11 days to see how he'd cope without sleep.
+16.00	19.00	 On the second day, his eyes stopped focusing.
+19.00	23.00	 Next, he lost the ability to identify objects by touch.
+23.00	27.00	 By day three, Garner was moody and uncoordinated.
+27.00	30.00	 At the end of the experiment, he was struggling to concentrate,
+30.00	35.00	 had trouble with short-term memory, became paranoid, and started hallucinating.
+35.00	39.00	 Although Garner recovered without long-term psychological or physical damage,
+39.00	47.00	 for others, losing shut-eye can result in hormonal imbalance, illness, and in extreme cases, death.
+47.00	53.00	 We're only beginning to understand why we sleep to begin with, but we do know it's essential.
+53.00	58.00	 Adults need seven to eight hours of sleep a night, and adolescents need about ten.
+58.00	63.00	 We grow sleepy due to signals from our body telling our brain we are tired
+63.00	67.00	 and signals from the environment telling us it's dark outside.
+67.00	71.00	 The rise in sleep-inducing chemicals like adenosine and melatonin
+71.00	77.00	 send us into a light dose that grows deeper, making our breathing and heart rate slow down,
+77.00	79.00	 and our muscles relax.
+80.00	87.00	 This non-REM sleep is when DNA is repaired and our bodies replenish themselves for the day ahead.
+87.00	93.00	 In the United States, it's estimated that 30% of adults and 66% of adolescents
+93.00	95.00	 are regularly sleep deprived.
+95.00	98.00	 This isn't just a minor inconvenience.
+98.00	101.00	 Staying awake can cause serious bodily harm.
+101.00	107.00	 When we lose sleep, learning, memory, mood, and reaction time are affected.
+107.00	112.00	 Sleeplessness may also cause inflammation, hallucinations, high blood pressure,
+112.00	117.00	 and it's even been linked to diabetes and obesity.
+117.00	124.00	 In 2014, a devoted soccer fan died after staying awake for 48 hours to watch the World Cup.
+124.00	127.00	 While his untimely death was due to a stroke,
+127.00	131.00	 studies show that chronically sleeping fewer than six hours a night
+131.00	135.00	 increases stroke risk by four and a half times
+135.00	139.00	 compared to those getting a consistent seven to eight hours of shut-eye.
+139.00	144.00	 For a handful of people on the planet who carry a rare inherited genetic mutation,
+144.00	147.00	 sleeplessness is a daily reality.
+147.00	151.00	 This condition, known as fatal familial insomnia,
+151.00	154.00	 places the body in a night-mirror state of wakefulness,
+154.00	157.00	 forbidding it from entering the sanctuary of sleep.
+157.00	164.00	 Within months or years, this progressively worsening condition leads to dementia and death.
+164.00	167.00	 How can sleep deprivation cause such immense suffering?
+167.00	173.00	 Scientists think the answer lies with the accumulation of waste products in the brain.
+173.00	178.00	 During our waking hours, our cells are busy using up our day's energy sources,
+178.00	183.00	 which get broken down into various byproducts including adenosine.
+183.00	189.00	 As adenosine builds up, it increases the urge to sleep, also known as sleep pressure.
+189.00	194.00	 In fact, caffeine works by blocking adenosine's receptor pathways.
+194.00	197.00	 Other waste products also build up in the brain,
+197.00	201.00	 and if they're not cleared away, they collectively overload the brain
+201.00	206.00	 and are thought to lead to the many negative symptoms of sleep deprivation.
+206.00	210.00	 So what's happening in our brain when we sleep to prevent this?
+210.00	214.00	 Scientists found something called the glimphatic system,
+214.00	219.00	 a cleanup mechanism that removes this build-up and is much more active when we're asleep.
+219.00	227.00	 It works by using cerebrospinal fluid to flush away toxic byproducts that accumulate between cells.
+227.00	231.00	 Lymphatic vessels, which serve as pathways for immune cells,
+231.00	234.00	 have recently been discovered in the brain,
+234.00	240.00	 and they may also play a role in clearing out the brain's daily waste products.
+240.00	245.00	 While scientists continue exploring the restorative mechanisms behind sleep,
+245.00	249.00	 we can be sure that slipping into slumber is a necessity
+249.00	253.00	 if we want to maintain our health and our sanity.

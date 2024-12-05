@@ -1,0 +1,557 @@
+2024-11-26-20-18-30
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-20-18-43
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-20-19-00
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	m4a
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'player/web/video/2024-11-26-20-18-30.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+    description     : Packed by Bilibili XCoder v2.0.2
+  Duration: 00:04:30.33, start: 0.000000, bitrate: 622 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 852x480, 532 kb/s, 30 fps, 30 tbr, 16k tbn (default)
+    Metadata:
+      handler_name    : Bento4 Video Handler
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 80 kb/s (default)
+    Metadata:
+      handler_name    : Bento4 Sound Handler
+      vendor_id       : [0][0][0][0]
+Output #0, ipod, to 'player/web/audio/2024-11-26-20-19-00.m4a':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    description     : Packed by Bilibili XCoder v2.0.2
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 80 kb/s (default)
+    Metadata:
+      handler_name    : Bento4 Sound Handler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+Press [q] to stop, [?] for help
+size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    
+[out#0/ipod @ 0x5a5e2f7b6380] video:0kB audio:2649kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.751096%
+size=    2695kB time=00:04:30.30 bitrate=  81.7kbits/s speed=5.82e+03x    
+2024-11-26-20-52-04
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-20-54-20
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-20-56-41
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-21-06-19
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-21-20-46
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-21-27-43
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-21-31-49
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-21-41-33
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-21-45-02
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-21-47-45
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-11-26-22-25-00
+https://www.bilibili.com/video/BV1dy1iYmE7y/?spm_id_from=333.1007.tianma.4-3-13.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-27-57
+https://www.bilibili.com/video/BV1cj411g7xR/?spm_id_from=333.337.search-card.all.click	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-28-16
+https://www.bilibili.com/video/BV1cj411g7xR/?spm_id_from=333.337.search-card.all.click	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-28-39
+https://www.bilibili.com/video/BV1cj411g7xR/?spm_id_from=333.337.search-card.all.click	m4a
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'player/web/video/2024-12-04-17-27-57.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+    description     : Packed by Bilibili XCoder v2.0.2
+  Duration: 00:04:19.71, start: 0.000000, bitrate: 930 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 852x480 [SAR 640:639 DAR 16:9], 786 kb/s, 30 fps, 30 tbr, 16k tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 134 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Output #0, ipod, to 'player/web/audio/2024-12-04-17-28-39.m4a':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    description     : Packed by Bilibili XCoder v2.0.2
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 134 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+Press [q] to stop, [?] for help
+size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    
+[out#0/ipod @ 0x581334345240] video:0kB audio:4255kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.048514%
+size=    4300kB time=00:04:19.69 bitrate= 135.6kbits/s speed=6.01e+03x    
+2024-12-04-17-34-32
+https://www.bilibili.com/video/BV1cj411g7xR/?spm_id_from=333.337.search-card.all.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-34-44
+https://www.bilibili.com/video/BV1cj411g7xR/?spm_id_from=333.337.search-card.all.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-34-54
+https://www.bilibili.com/video/BV1cj411g7xR/?spm_id_from=333.337.search-card.all.click&vd_source=49b16a52017a386cb4a902fefbc1dab6	m4a
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'player/web/video/2024-12-04-17-34-32.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf60.16.100
+    description     : Packed by Bilibili XCoder v2.0.2
+  Duration: 00:04:19.71, start: 0.000000, bitrate: 930 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 852x480 [SAR 640:639 DAR 16:9], 786 kb/s, 30 fps, 30 tbr, 16k tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 134 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Output #0, ipod, to 'player/web/audio/2024-12-04-17-34-54.m4a':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    description     : Packed by Bilibili XCoder v2.0.2
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 134 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+Press [q] to stop, [?] for help
+size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    
+[out#0/ipod @ 0x590c36743240] video:0kB audio:4255kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.048514%
+size=    4300kB time=00:04:19.69 bitrate= 135.6kbits/s speed=6.39e+03x    
+2024-12-04-17-43-13
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-43-21
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-43-40
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1	m4a
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'player/web/video/2024-12-04-17-43-13.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41
+    encoder         : Lavf60.16.100
+    description     : Packed by Bilibili XCoder v2.0.2
+  Duration: 00:03:46.60, start: 0.000000, bitrate: 447 kb/s
+  Stream #0:0[0x1](und): Video: hevc (Main) (hev1 / 0x31766568), yuv420p(tv), 852x480 [SAR 640:639 DAR 16:9], 309 kb/s, 30 fps, 30 tbr, 16k tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Output #0, ipod, to 'player/web/audio/2024-12-04-17-43-40.m4a':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41
+    description     : Packed by Bilibili XCoder v2.0.2
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+Press [q] to stop, [?] for help
+size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    
+[out#0/ipod @ 0x60ac06393380] video:0kB audio:3541kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.103578%
+size=    3580kB time=00:03:46.57 bitrate= 129.4kbits/s speed=6.76e+03x    
+2024-12-04-17-45-51
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-47-36
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-47-45
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-17-48-14
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1&vd_source=49b16a52017a386cb4a902fefbc1dab6	m4a
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+  configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'player/web/video/2024-12-04-17-47-36.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41
+    encoder         : Lavf60.16.100
+    description     : Packed by Bilibili XCoder v2.0.2
+  Duration: 00:03:46.60, start: 0.000000, bitrate: 447 kb/s
+  Stream #0:0[0x1](und): Video: hevc (Main) (hev1 / 0x31766568), yuv420p(tv), 852x480 [SAR 640:639 DAR 16:9], 309 kb/s, 30 fps, 30 tbr, 16k tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Output #0, ipod, to 'player/web/audio/2024-12-04-17-48-14.m4a':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41
+    description     : Packed by Bilibili XCoder v2.0.2
+    encoder         : Lavf60.16.100
+  Stream #0:0(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:1 -> #0:0 (copy)
+Press [q] to stop, [?] for help
+size=       0kB time=00:00:00.00 bitrate=N/A speed=N/A    
+[out#0/ipod @ 0x64914053b380] video:0kB audio:3541kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.103578%
+size=    3580kB time=00:03:46.57 bitrate= 129.4kbits/s speed=6.66e+03x    
+2024-12-04-17-54-16
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-18-56-39
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-18-57-20
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-18-57-38
+https://www.bilibili.com/video/BV1TK411W7yf/?spm_id_from=333.788.recommend_more_video.-1&vd_source=49b16a52017a386cb4a902fefbc1dab6	mp4
+Error processing line 1 of /home/david/miniconda3/envs/video/lib/python3.8/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "/home/david/miniconda3/envs/video/lib/python3.8/site.py", line 177, in addpackage
+      exec(line)
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-23-08-59
+https://www.bilibili.com/video/BV1eh21YGEPK/?spm_id_from=333.1007.tianma.4-3-13.click	mp4
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-23-09-59
+https://www.bilibili.com/video/BV1eh21YGEPK/?spm_id_from=333.1007.tianma.4-3-13.click	mp4
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-23-15-32
+https://www.bilibili.com/video/BV1K9BDYWEwZ/?spm_id_from=333.1007.tianma.7-4-26.click	mp4
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-04-23-16-35
+https://www.bilibili.com/video/BV1K9BDYWEwZ/?spm_id_from=333.1007.tianma.7-4-26.click	mp4
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m
+2024-12-05-10-33-40
+https://www.bilibili.com/video/BV1K9BDYWEwZ/?spm_id_from=333.1007.tianma.7-4-26.click	mp4
+[33myou-get: You will need login cookies for 720p formats or above. (use --cookies to load cookies.txt.)[0m

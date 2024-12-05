@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jquery打字动画效果</title>
+
+<link href="css/animate.css" rel="stylesheet">
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.lettering.js"></script>
+<script src="js/jquery.textillate.js"></script>
+<script>
+$(function () {
+	$('.text1').textillate({ in: { effect: 'rollIn' } });
+	$('.text2').textillate({
+		initialDelay: 500, 	//设置动画开始时间
+		in: { 
+			effect: 'flipInX',	//设置动画名称
+			delay: 50,
+		}
+	});
+	$('.text3').textillate({
+		initialDelay: 10,
+		in: { effect: 'bounceInDown' }
+	});
+})
+
+</script>
+<style type="text/css">
+body {background:#242424;}
+div {width:960px;margin:0 auto;}
+.text1,.text2,.text3 {visibility:hidden;}
+.text1,.text2 {color:#fff;color:#fff;}
+.text1 {margin:50px;text-align:center;font-size:30px;text-shadow:0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8);}
+.text2 {font-family:microsoft yahei;font-size:14px;line-height:24px;text-shadow:0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8)}
+.text3 {font-family:microsoft yahei;text-align:center;font-size:36px;color:#900}
+</style>
+</head>
+
+<body>
+
+<div class="m">
+	<p class="text1">Welcome !</p>
+	<p class="text1">Log</p>
+	<!-- <p class="text2"> </p>
+	<p class="text3"> </p> -->
+</div>
+
+</body>
+</html>

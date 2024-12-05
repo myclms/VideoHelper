@@ -1,0 +1,5 @@
+you-get
+faster-whisper
+websockets
+ffmpeg-python
+torch

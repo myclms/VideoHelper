@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Welcome here!</title>
+	<!-- Styles -->
+	<link rel="stylesheet" href="dist/plyr.css">
+	<!-- Plyr core script -->
+	<script src="dist/plyr.js"></script>
+	<style>
+		body{
+			background-color: #262626; /* 设置背景颜色 */
+		}
+		.m{ margin-left: auto; margin-right: auto; width: 640px; margin-top: 100px; }
+		
+		input[type="text"] {
+			padding: 15px;
+			font-size: 16px;
+			border: 2px solid #ccc; /* 设置边框颜色 */
+			border-radius: 2px;
+			box-shadow: none;
+			background-color: transparent; /* 设置背景透明 */
+			width: 605px; /* 设置输入框宽度 */
+			background-color: #262626; /* 设置输入框背景颜色 */
+			margin-top: 30px;
+			color: #ccc; /* 设置输入框的字体颜色 */
+		}
+
+		#videoPlayer {
+			background-color: #262626; /* 设置视频播放区域的背景颜色 */
+		}
+
+		.extractAudio {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+		.getSubtitle {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+		
+	</style>
+
+	<!-- log head -->
+	<link href="log_output/css/animate.css" rel="stylesheet">
+
+	<script src="log_output/js/jquery-1.9.1.min.js"></script>
+	<script src="log_output/js/jquery.lettering.js"></script>
+	<script src="log_output/js/jquery.textillate.js"></script>
+	<script>
+	$(function beautify_log() {
+		$('.text1').textillate({ in: { effect: 'rollIn' } });
+		$('.text2').textillate({
+			initialDelay: 500, 	//设置动画开始时间
+			in: { 
+				effect: 'flipInX',	//设置动画名称
+				delay: 50,
+			}
+		});
+		$('.text3').textillate({
+			initialDelay: 10,
+			in: { 
+				effect: 'bounceInDown' ,
+				delay: 5,
+			}
+		});
+	})
+	</script>
+
+	<style type="text/css">
+	.text1,.text2,.text3 {visibility:hidden;}
+	.text1,.text2 {color:#fff;color:#fff;}
+	.text1 {margin:50px;text-align:center;font-size:30px;text-shadow:0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8);}
+	.text2 {font-family:microsoft yahei;font-size:14px;line-height:24px;text-shadow:0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8)}
+	.text3 {font-family:microsoft yahei;text-align:center;font-size:14px;color:#fff}
+	</style>
+
+</head>
+
+<body>
+<div class="m">
+<video id="videoPlayer" poster="vs.png" controls>
+  <source id="videoSource" src="" type="video/mp4">
+</video>
+<input type="text" id="inputSource" placeholder="input url here" onkeydown="if (event.keyCode == 13) { get_video(); }">
+<script>plyr.setup();</script>
+<button class="extractAudio" onclick="aud_button_click()">提取音频</button>
+<button class="getSubtitle" onclick="sub_button_click()">显示字幕</button>
+</div>
+
+<div class="log" style="height:400px;overflow-x:hidden;text-align:center;" width="61.8%">
+	<p class="text1">Welcome !</p>
+	<p class="text1">Log</p>
+</div>
+
+<script src="dist/main.js"></script>
+
+</body>
+</html>
