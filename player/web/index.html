@@ -95,6 +95,7 @@
 </head>
 
 <body>
+
 <div class="m">
 <video id="videoPlayer" poster="vs.png" controls>
   <source id="videoSource" src="" type="video/mp4">
@@ -109,6 +110,12 @@
 	<p class="text1">Welcome !</p>
 	<p class="text1">Log</p>
 </div>
+
+<label for="whisper_model_size" class="whisper_model_size">请选择语音识别模型大小：</label>
+<select name="whisper_model_size" id="whisper_model_size" onchange="set_whisper_model_size()">
+	<option value="small">small</option>
+	<option value="large-v2">large-v2</option>
+</select>
 
 <script src="dist/main.js"></script>
 

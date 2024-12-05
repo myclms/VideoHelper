@@ -1,5 +1,4 @@
 from faster_whisper import WhisperModel
-import torch
 import os
 import json
 from vars import msgs
@@ -11,10 +10,10 @@ async def send_one_sub(websocket, subtitle:str, start_time:float, end_time:float
 
 
 # 语音转文字
-async def whisper_transcribe(websocket, path_a:str, path_s:str, model_size="small", compute_type="int8"):
+async def whisper_transcribe(websocket, path_a:str, path_s:str, model_size="large-v2", compute_type="int8"):
     os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 
-    model = WhisperModel(model_size, device = "cuda" if torch.cuda.is_available() else "cpu", compute_type=compute_type)
+    model = WhisperModel(model_size, device = "auto", compute_type=compute_type)
 
     segments, info = model.transcribe(path_a, beam_size=5)
 

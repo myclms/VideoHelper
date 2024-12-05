@@ -2,6 +2,7 @@ const videoElement = document.querySelector("video");
 const inputElement = document.querySelector("input[type='text']");
 const logElement = document.querySelector("div.log");
 const subElement = document.querySelector(".getSubtitle")
+const whisperElement = document.querySelector("#whisper_model_size")
 
 
 
@@ -43,14 +44,14 @@ socket.onmessage = (event) => {
 
     if (data.msg == 'get_video') {
         videoElement.src = 'video/' + data.file_name + '.mp4';
-        console.log(videoElement.src)
+        // console.log(videoElement.src)
         videoElement.load();
     }
     else if (data.msg == 'extract_audio') {
         // path_a = 'audio/' + data.file_name + '.m4a';
     }
     else if (data.msg == 'get_subtitle') {
-        console.log(String(data.start)+' --> '+String(data.end)+'    '+String(data.subtitle));
+        // console.log(String(data.start)+' --> '+String(data.end)+'    '+String(data.subtitle));
         if (data.subtitle) {
             if(data.start == -1){// 传输完毕
                 sending_sub = false
@@ -66,7 +67,7 @@ socket.onmessage = (event) => {
             }
         }
     }
-    else {
+    else if (data.msg == 'log2' || data.msg == 'log3') {
         if (current_log_num >= maxlog){
             tE = logElement.querySelector("p");
             if(tE){
@@ -75,7 +76,7 @@ socket.onmessage = (event) => {
         }
 
         pElement = document.createElement("p");
-        console.log(data.msg)
+        // console.log(data.msg)
         if (data.msg == 'log2'){
             pElement.className = 'text2'
         }
@@ -86,6 +87,10 @@ socket.onmessage = (event) => {
         logElement.appendChild(pElement);
         beautify_log();
         current_log_num += 1;
+    }
+    else if (data.msg == 'setting') {
+        // console.log(data.settings)
+        whisperElement.value = data.settings.whisper_model_size;
     }
 };
 
@@ -127,6 +132,14 @@ function sub_button_click() {
         }
         find_subtitles(0, sub_list.length-1)
     }
+}
+
+function set_whisper_model_size() {
+    socket.send(JSON.stringify({
+        'msg': 'setting',
+        'key': 'whisper_model_size',
+        'value': whisperElement.value,
+    }))
 }
 
 videoElement.addEventListener("timeupdate", function () {

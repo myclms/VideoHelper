@@ -2,6 +2,7 @@ import datetime
 import subprocess
 import ffmpeg
 import json
+import pickle
 import os
 from audio_transcibe import whisper_transcribe, whisper_transcribe_local
 from vars import *
@@ -132,7 +133,10 @@ async def get_subtitle(websocket, url:str):
             path_s = path_to_raw_sub + '/' + file_name_s + '.' + types[2]
             path_a = path_to_raw_audio + '/' + file_name_a + '.' + types[1]
             # 语音识别 ———— whisper
-            await whisper_transcribe(websocket, path_a, path_s) # 转录并保存、发送
+            # with open(setting_name, 'ab+') as f:
+            #     model = f.readline().strip()
+            await whisper_transcribe(websocket, path_a, path_s, 
+                                    model_size=settings['whisper_model_size'] if settings['whisper_model_size'] in model_sizes else 'large-v2') # 转录并保存、发送
             write_into_log(file_name_s, url, types[2])
             await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Getting subtitle end ............"}))
             return file_name_s
@@ -168,3 +172,27 @@ async def check_log(websocket):
                 f.write(line)
 
     await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Checking log end ............"}))
+
+async def get_settings():
+    global settings
+    print("............ Get settings ............")
+    if os.stat(setting_name).st_size != 0 :
+        with open(setting_name, 'rb') as f:
+            settings = pickle.load(f)
+
+async def save_settings():
+    global settings
+    print("............ Save settings ............")
+    with open(setting_name, 'wb') as f:
+        pickle.dump(settings, f)
+
+async def send_settings(websocket):
+    global settings
+    print("............ Send settings ............")
+    print(settings)
+    await websocket.send(json.dumps({'msg':msgs[5],'settings':settings}))
+
+async def update_settings(key, value):
+    global settings
+    print("............ Update settings ............")
+    settings[str(key)] = value
