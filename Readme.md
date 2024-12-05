@@ -4,7 +4,7 @@
   <p>基于爬虫、语音识别、机器翻译、大语言模型的视频播放助手</p>
 </div>
 
-  简体中文 / [English](./docs/README_EN.md)
+  简体中文 / [English](./docs/Readme_EN.md)
 
 ## 📖 项目介绍
 
