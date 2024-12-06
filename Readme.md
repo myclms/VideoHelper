@@ -36,7 +36,7 @@
    python ./player/server/main.py
    ```
 
-4. 打开网页，输入目标视频的网页
+4. 打开网页，输入目标视频的网址
 
    ```
    路径： ./player/web/index.html
