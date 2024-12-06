@@ -47,9 +47,9 @@ socket.onmessage = (event) => {
         // console.log(videoElement.src)
         videoElement.load();
     }
-    else if (data.msg == 'extract_audio') {
-        // path_a = 'audio/' + data.file_name + '.m4a';
-    }
+    // else if (data.msg == 'extract_audio') {
+    //     // path_a = 'audio/' + data.file_name + '.m4a';
+    // }
     else if (data.msg == 'get_subtitle') {
         // console.log(String(data.start)+' --> '+String(data.end)+'    '+String(data.subtitle));
         if (data.subtitle) {
@@ -105,15 +105,15 @@ function get_video() {
     }
 }
 
-function aud_button_click() {
-    if (inputElement.value != last_audio_url){
-        socket.send(JSON.stringify({
-            'msg': 'extract_audio',
-            'url': inputElement.value,
-        }))
-        last_audio_url = inputElement.value;
-    }
-}
+// function aud_button_click() {
+//     if (inputElement.value != last_audio_url){
+//         socket.send(JSON.stringify({
+//             'msg': 'extract_audio',
+//             'url': inputElement.value,
+//         }))
+//         last_audio_url = inputElement.value;
+//     }
+// }
 
 function sub_button_click() {
     if(showing){

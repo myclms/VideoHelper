@@ -1,7 +1,7 @@
 import asyncio
 import websockets
 import json
-from mylib import get_video, extract_audio, get_subtitle, check_log, update_settings, save_settings, get_settings, send_settings
+from mylib import get_video, get_subtitle, check_log, update_settings, save_settings, get_settings, send_settings
 from vars import msgs
 
 # 检测客户端权限，用户名密码通过才能退出循环
@@ -40,14 +40,14 @@ async def recv_msg(websocket):
                 if file_name != '':
                     await websocket.send(json.dumps({'msg':msgs[0],'file_name':file_name}))
             
-        elif msg == msgs[1] :
-            url = recv['url']
-            if url=='':
-                await websocket.send(json.dumps({'msg':msgs[4],'log':"Please input the url first, then click this button. "}))
-            else:
-                file_name = await extract_audio(websocket, url)
-                if file_name != '':
-                    await websocket.send(json.dumps({'msg':msgs[1],'file_name':file_name}))
+        # elif msg == msgs[1] :
+        #     url = recv['url']
+        #     if url=='':
+        #         await websocket.send(json.dumps({'msg':msgs[4],'log':"Please input the url first, then click this button. "}))
+        #     else:
+        #         file_name = await extract_audio(websocket, url)
+        #         if file_name != '':
+        #             await websocket.send(json.dumps({'msg':msgs[1],'file_name':file_name}))
 
         elif msg == msgs[2] :
             url = recv['url']
@@ -85,3 +85,4 @@ if __name__ == "__main__":
 # 字幕翻译
 # 美化页面 UI
 # you-get 命令行 --> 库调用
+# log（视频信息）优化

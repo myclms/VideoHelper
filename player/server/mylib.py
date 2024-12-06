@@ -80,36 +80,36 @@ async def get_video(websocket, url:str):
 
     return file_name
 
-async def extract_audio(websocket, url:str):
+# async def extract_audio(websocket, url:str):
 
-    has_audio,file_name_a = confirm_has_type(url, types[1])
-    if has_audio:
-        print("............ Same audio, no need to extract ............")
-    else:
-        has_video,file_name_v = confirm_has_type(url, types[0])
-        if not has_video:
-            await websocket.send(json.dumps({'msg':msgs[4],'log':"Please submit the url first, then click this button. "}))
-            return ''
-        else:
-            # file_name_v != ''
-            # file_name_a == ''
-            file_name_a = get_time()
-            # 提取音频 ———— ffmpeg
-            await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Extracting audio start ............"}))
-            path_a = path_to_raw_audio + '/' + file_name_a + '.' + types[1]
-            path_v = path_to_raw_video + '/' + file_name_v + '.' + types[0]
+#     has_audio,file_name_a = confirm_has_type(url, types[1])
+#     if has_audio:
+#         print("............ Same audio, no need to extract ............")
+#     else:
+#         has_video,file_name_v = confirm_has_type(url, types[0])
+#         if not has_video:
+#             await websocket.send(json.dumps({'msg':msgs[4],'log':"Please submit the url first, then click this button. "}))
+#             return ''
+#         else:
+#             # file_name_v != ''
+#             # file_name_a == ''
+#             file_name_a = get_time()
+#             # 提取音频 ———— ffmpeg
+#             await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Extracting audio start ............"}))
+#             path_a = path_to_raw_audio + '/' + file_name_a + '.' + types[1]
+#             path_v = path_to_raw_video + '/' + file_name_v + '.' + types[0]
 
-            # result = subprocess.run(['ffmpeg', '-i', path_v, '-vn', '-acodec', 'copy', path_a], capture_output=True, text=True)
-            try:
-                ffmpeg.input(path_v).output(path_a).run()
-            except Exception as ex:
-                write_into_error_log(url, types[1], ex)
-            # await websocket.send(json.dumps({'msg':msgs[4],'log':result.stderr}))
-            # write_into_error_log(url, types[1], result.stderr)
-            write_into_log(file_name_a, url, types[1])
-            await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Extracting audio end ............"}))
+#             # result = subprocess.run(['ffmpeg', '-i', path_v, '-vn', '-acodec', 'copy', path_a], capture_output=True, text=True)
+#             try:
+#                 ffmpeg.input(path_v).output(path_a).run()
+#             except Exception as ex:
+#                 write_into_error_log(url, types[1], ex)
+#             # await websocket.send(json.dumps({'msg':msgs[4],'log':result.stderr}))
+#             # write_into_error_log(url, types[1], result.stderr)
+#             write_into_log(file_name_a, url, types[1])
+#             await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Extracting audio end ............"}))
 
-    return file_name_a
+#     return file_name_a
         
 
 async def get_subtitle(websocket, url:str):
@@ -121,21 +121,37 @@ async def get_subtitle(websocket, url:str):
          await whisper_transcribe_local(websocket, path_to_raw_sub + '/' + file_name_s + '.' + types[2]) # 读取本地文件发送
          return file_name_s
     else:
-        has_audio,file_name_a = confirm_has_type(url, types[1])
-        if not has_audio:
-            await websocket.send(json.dumps({'msg':msgs[4],'log':"Please extract audio first, then click this button. "}))
+        # has_audio,file_name_a = confirm_has_type(url, types[1])
+        # if not has_audio:
+        #     await websocket.send(json.dumps({'msg':msgs[4],'log':"Please extract audio first, then click this button. "}))
+        #     return ''
+        # else:
+        #     await websocket.send(json.dumps({'msg':msgs[2],'start':-2}))
+        #     # file_name_a != '', file_name_s == ''
+        #     await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Getting subtitle start (first try may need to download model, please wait minutes ) ............"}))
+        #     file_name_s = get_time()
+        #     path_s = path_to_raw_sub + '/' + file_name_s + '.' + types[2]
+        #     path_a = path_to_raw_audio + '/' + file_name_a + '.' + types[1]
+        #     # 语音识别 ———— whisper
+        #     # with open(setting_name, 'ab+') as f:
+        #     #     model = f.readline().strip()
+        #     await whisper_transcribe(websocket, path_a, path_s, 
+        #                             model_size=settings['whisper_model_size'] if settings['whisper_model_size'] in model_sizes else 'large-v2') # 转录并保存、发送
+        #     write_into_log(file_name_s, url, types[2])
+        #     await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Getting subtitle end ............"}))
+        #     return file_name_s
+        has_video,file_name_v = confirm_has_type(url, types[0])
+        if not has_video:
+            await websocket.send(json.dumps({'msg':msgs[4],'log':"Please submit the url first, then click this button. "}))
             return ''
         else:
             await websocket.send(json.dumps({'msg':msgs[2],'start':-2}))
-            # file_name_a != '', file_name_s == ''
             await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Getting subtitle start (first try may need to download model, please wait minutes ) ............"}))
             file_name_s = get_time()
             path_s = path_to_raw_sub + '/' + file_name_s + '.' + types[2]
-            path_a = path_to_raw_audio + '/' + file_name_a + '.' + types[1]
+            path_v = path_to_raw_video + '/' + file_name_v + '.' + types[0]
             # 语音识别 ———— whisper
-            # with open(setting_name, 'ab+') as f:
-            #     model = f.readline().strip()
-            await whisper_transcribe(websocket, path_a, path_s, 
+            await whisper_transcribe(websocket, path_v, path_s, 
                                     model_size=settings['whisper_model_size'] if settings['whisper_model_size'] in model_sizes else 'large-v2') # 转录并保存、发送
             write_into_log(file_name_s, url, types[2])
             await websocket.send(json.dumps({'msg':msgs[3],'log':"............ Getting subtitle end ............"}))

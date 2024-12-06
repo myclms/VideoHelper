@@ -1,0 +1,6 @@
+/log.txt
+/error.txt
+*.mp4
+*.m4a
+player/web/sub/*.txt
+player/server/__pycache__/
