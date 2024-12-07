@@ -75,6 +75,8 @@ VideoHelper/
 
 - 增加video_list功能，可在多个获取过的视频中切换。支持在本地文件夹增加视频（或多个视频）（增加后点击列表右上角加号刷新列表）。后续支持在网页上删除视频，修改视频名称。
 
+![](https://gitee.com/myclms/pictures/raw/master/image-20241207225317666.png)
+
 2024.12.6
 
 - 新增 settings.bin，目前只有配置whisper模型大小（用于语音识别）。
