@@ -228,6 +228,7 @@ async def update_settings(key, value):
 
 async def get_list():
     global video_list
+    video_list = []
     print("............ Get list ............")
     with open(log_name, "r") as f:
         lines = f.readlines()
@@ -260,3 +261,21 @@ async def update_list(list_operation:str, name:str=''):
     # 删
     # elif list_operation_types[1] == list_operation and name:
     #     video_list.remove(name)
+
+async def scan_local_added_videos(websocket):
+    global video_list
+    print("............ Scan local videos ............")
+    local_videos = os.listdir(path_to_raw_video)
+    
+    # 更新logs和video_list
+    for local_video in local_videos:
+        try:
+            name = local_video.split('.')[0]
+            type = local_video.split('.')[1]
+        except Exception as ex:
+            write_into_error_log('scan_local_added_videos', 'scan_local_added_videos', str(ex))
+            continue
+        if type==types[0] and name not in video_list:
+            await update_list(list_operation_types[0], name)
+            await send_added_list(websocket)
+            write_into_log(get_time(), get_time(), types[0], name)

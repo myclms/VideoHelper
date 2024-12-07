@@ -94,9 +94,20 @@
 
 	<!-- video list head -->
 	<style>
-        #videoPlayer {
-            width: 100%;
-            height: auto;
+        #add_video_local {
+			color: #ccc;
+			font-size: larger;
+			font-weight: bold;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 20px;
+            border: none;
+			background-color: transparent;
+        }
+		#add_video_local:hover {
+            background-color: #161515; /* 鼠标悬停时改变背景颜色 */
         }
 
         #videoList li {
@@ -118,7 +129,7 @@
         #videoList li.active {
             font-weight: bold;
             color: rgb(238, 81, 13);
-        }
+        }	
     </style>
 </head>
 
@@ -148,6 +159,7 @@
 
         <!-- video_gallery -->
         <div style="float: right; width: 20%; align-items: center;"> 
+			<button id="add_video_local">+</button>
             <!-- <input type="text" id="searchBar" placeholder="Search videos..." style="width: 200px;"> -->
             <ul id="videoList">
                 <!-- <li data-video-src="video1.mp4">Video 1</li>

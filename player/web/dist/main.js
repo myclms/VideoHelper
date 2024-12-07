@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const logElement = document.querySelector("div.log");
     const subElement = document.querySelector(".getSubtitle")
     const whisperElement = document.querySelector("#whisper_model_size")
+    const addVideoElement = document.querySelector("#add_video_local")
     var videoList = document.getElementById('videoList');
     var searchBar = document.getElementById('searchBar');
 
@@ -260,6 +261,13 @@ document.addEventListener('DOMContentLoaded', function () {
     //     }
     // });
     
+    addVideoElement.addEventListener('click', function(e) {
+        socket.send(JSON.stringify({
+            'msg': 'list',
+            'operation': 'add',
+        }))
+    })
+
     videoList.addEventListener('click', function (e) {
         if (e.target && e.target.nodeName === 'LI') {
             var videoSrc = e.target.getAttribute('data-video-src');

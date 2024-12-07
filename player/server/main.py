@@ -1,8 +1,8 @@
 import asyncio
 import websockets
 import json
-from mylib import get_video, get_subtitle, check_log, update_settings, save_settings, get_settings, send_settings, get_list, send_list
-from vars import msgs
+from mylib import scan_local_added_videos, get_video, get_subtitle, check_log, update_settings,save_settings, get_settings, send_settings, get_list, send_list
+from vars import msgs, list_operation_types
 
 # 检测客户端权限，用户名密码通过才能退出循环
 # async def check_permit(websocket):
@@ -63,7 +63,11 @@ async def recv_msg(websocket):
             await save_settings()
 
         elif msg == msgs[6] :
-            pass
+            operation = recv['operation']
+            if operation == list_operation_types[0]:
+                await scan_local_added_videos(websocket)
+            elif operation == list_operation_types[1]:
+                pass
 
         # response_text = f"your submit context: {recv_text}"
         # await websocket.send(response_text)
