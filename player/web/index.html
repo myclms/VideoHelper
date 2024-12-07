@@ -30,7 +30,7 @@
 			background-color: #262626; /* 设置视频播放区域的背景颜色 */
 		}
 
-		.extractAudio {
+		/* .extractAudio {
             background-color: transparent;
             border: 2px solid white;
             color: white;
@@ -41,7 +41,7 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-        }
+        } */
 
 		.getSubtitle {
             background-color: transparent;
@@ -92,30 +92,78 @@
 	.text3 {font-family:microsoft yahei;text-align:center;font-size:14px;color:#fff}
 	</style>
 
+	<!-- video list head -->
+	<style>
+        #videoPlayer {
+            width: 100%;
+            height: auto;
+        }
+
+        #videoList li {
+            color:#ccc;
+            border-bottom: 2px solid #ccc; /* 添加下划线 */
+            height: 50px; /* 调整行高 */
+            line-height: 30px; /* 调整行高 */
+            padding-bottom: 0; /* 添加内边距 */
+            padding-top: 17px;
+            padding-left: 20px;
+
+            white-space: nowrap; /* 防止文本换行 */
+            overflow: hidden; /* 隐藏超出屏幕范围的文本 */
+            text-overflow: ellipsis; /* 在超出屏幕范围的文本后显示省略号 */
+        }
+        #videoList li:hover {
+            background-color: #161515; /* 鼠标悬停时改变背景颜色 */
+        }
+        #videoList li.active {
+            font-weight: bold;
+            color: rgb(238, 81, 13);
+        }
+    </style>
 </head>
 
 <body>
+    <div style="display: flex; align-items: stretch;">
+        <!-- settings -->
+        <div style="float: left; width: 20%;">
+            <label for="whisper_model_size" class="whisper_model_size" display="inline-block">请选择语音识别(字幕生成)模型大小：</label>
+            <select name="whisper_model_size" id="whisper_model_size" display="inline-block">
+                <option value="small">small</option>
+                <option value="large-v2">large-v2</option>
+            </select>
+        </div>
+        <!-- settings -->
 
-<div class="m">
-<video id="videoPlayer" poster="vs.png" controls>
-  <source id="videoSource" src="" type="video/mp4">
-</video>
-<input type="text" id="inputSource" placeholder="input url here" onkeydown="if (event.keyCode == 13) { get_video(); }">
-<script>plyr.setup();</script>
-<!-- <button class="extractAudio" onclick="aud_button_click()">提取音频</button> -->
-<button class="getSubtitle" onclick="sub_button_click()">显示字幕</button>
-</div>
+        <!-- video_player -->
+        <div class="m">
+            <video id="videoPlayer" poster="vs.png" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            </video>
+            <input type="text" id="inputSource" placeholder="input url here">
+            <script>plyr.setup();</script>
+            <!-- <button class="extractAudio" onclick="aud_button_click()">提取音频</button> -->
+            <button class="getSubtitle">显示字幕</button>
+        </div>
+        <!-- video_player -->
 
-<div class="log" style="height:400px;overflow-x:hidden;text-align:center;" width="61.8%">
-	<p class="text1">Welcome !</p>
-	<p class="text1">Log</p>
-</div>
+        <!-- video_gallery -->
+        <div style="float: right; width: 20%; align-items: center;"> 
+            <!-- <input type="text" id="searchBar" placeholder="Search videos..." style="width: 200px;"> -->
+            <ul id="videoList">
+                <!-- <li data-video-src="video1.mp4">Video 1</li>
+                <li data-video-src="video2.mp4">Video 2</li>
+                <li data-video-src="video3.mp4">Video 3</li> -->
+            </ul>
+        </div>
+        <!-- video_gallery -->
+    </div>
 
-<label for="whisper_model_size" class="whisper_model_size">请选择语音识别模型大小：</label>
-<select name="whisper_model_size" id="whisper_model_size" onchange="set_whisper_model_size()">
-	<option value="small">small</option>
-	<option value="large-v2">large-v2</option>
-</select>
+    <!-- logs -->
+    <div class="log" style="height:400px;overflow-x:hidden;text-align:center;" width="61.8%">
+        <p class="text1">Welcome !</p>
+        <p class="text1">Log</p>
+    </div>
+    <!-- logs -->
 
 <script src="dist/main.js"></script>
 

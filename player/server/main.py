@@ -1,7 +1,7 @@
 import asyncio
 import websockets
 import json
-from mylib import get_video, get_subtitle, check_log, update_settings, save_settings, get_settings, send_settings
+from mylib import get_video, get_subtitle, check_log, update_settings, save_settings, get_settings, send_settings, get_list, send_list
 from vars import msgs
 
 # 检测客户端权限，用户名密码通过才能退出循环
@@ -36,7 +36,7 @@ async def recv_msg(websocket):
             if url=='':
                 await websocket.send(json.dumps({'msg':msgs[4],'log':"Please input the url first, then click this button. "}))
             else:
-                file_name = await get_video(websocket, url)
+                file_name = await get_video(websocket, url, recv['name'])
                 if file_name != '':
                     await websocket.send(json.dumps({'msg':msgs[0],'file_name':file_name}))
             
@@ -62,15 +62,23 @@ async def recv_msg(websocket):
             await update_settings(recv['key'], recv['value'])
             await save_settings()
 
+        elif msg == msgs[6] :
+            pass
+
         # response_text = f"your submit context: {recv_text}"
         # await websocket.send(response_text)
 
 # 服务器端主逻辑
 # websocket和path是该函数被回调时自动传过来的，不需要自己传
 async def main_logic(websocket):
+    # 先检查日志再根据日志读取视频列表
+    await check_log()
+    await get_list()
+    await send_list(websocket)
+    # 发送设置信息
     await get_settings()
     await send_settings(websocket)
-    await check_log(websocket)
+    # 主要信息发收
     await recv_msg(websocket)
 
 async def main():
@@ -82,6 +90,7 @@ if __name__ == "__main__":
 
 
 
+# 视频列表
 # 字幕翻译
 # 美化页面 UI
 # you-get 命令行 --> 库调用
