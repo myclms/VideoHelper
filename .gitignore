@@ -2,3 +2,4 @@
 *.vtt
 __pycache__/
 /.vscode
+test*
