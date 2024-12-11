@@ -1,6 +1,9 @@
-_warehouse/video/
-_warehouse/subtitle/
-_warehouse/subtitle_zh/
+warehouse/video/*
+!warehouse/video/.gitkeep
+warehouse/subtitle/*
+!warehouse/subtitle/.gitkeep
+warehouse/subtitle_zh/*
+!warehouse/subtitle_zh/.gitkeep
 __pycache__/
 /.vscode/
 test*
