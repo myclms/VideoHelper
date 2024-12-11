@@ -1,5 +1,6 @@
-*.mp4
-*.vtt
+warehouse/video/*
+warehouse/subtitle/*
+warehouse/subtitle_zh/*
 __pycache__/
 /.vscode
 test*
