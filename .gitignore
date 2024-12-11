@@ -1,6 +1,4 @@
-/log.txt
-/error.txt
 *.mp4
-*.m4a
-sub/*.txt
-player/server/__pycache__/
+*.vtt
+__pycache__/
+/.vscode

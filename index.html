@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Welcome here!</title>
+	<!-- Styles -->
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+	<style>
+		body{
+			background-color: #262626; /* 设置背景颜色 */
+		}
+		.m{ margin-left: auto; margin-right: auto; width: 640px; margin-top: 100px; }
+
+		#videoPlayer {
+			background-color: #262626; /* 设置视频播放区域的背景颜色 */
+		}
+		
+	</style>
+
+	<!-- video list head -->
+	<style>
+        #videoList li {
+            color:#ccc;
+            border-bottom: 2px solid #ccc; /* 添加下划线 */
+            height: 50px; /* 调整行高 */
+            line-height: 30px; /* 调整行高 */
+            padding-bottom: 0; /* 添加内边距 */
+            padding-top: 17px;
+            padding-left: 10px;
+
+            white-space: nowrap; /* 防止文本换行 */
+            overflow: hidden; /* 隐藏超出屏幕范围的文本 */
+            text-overflow: ellipsis; /* 在超出屏幕范围的文本后显示省略号 */
+        }
+        #videoList li:hover {
+            background-color: #161515; /* 鼠标悬停时改变背景颜色 */
+        }
+        #videoList li.active {
+            font-weight: bold;
+            color: rgb(238, 81, 13);
+        }	
+
+        #inputSource {
+			padding: 17px;
+			font-size: 16px;
+			border: 2px solid #ccc; /* 设置边框颜色 */
+			border-radius: 2px;
+			box-shadow: none;
+			background-color: transparent; /* 设置背景透明 */
+			/* width: 605px; */
+			margin-right: auto;
+			color: #ccc; /* 设置输入框的字体颜色 */
+		}
+    </style>
+</head>
+
+<body>
+    <div style="display: flex; align-items: stretch;">
+        <!-- settings -->
+        <!-- <div style="float: left; width: 20%;">
+            <label for="whisper_model_size" class="whisper_model_size" display="inline-block">请选择语音识别(字幕生成)模型大小：</label>
+            <select name="whisper_model_size" id="whisper_model_size" display="inline-block">
+                <option value="small">small</option>
+                <option value="large-v2">large-v2</option>
+            </select>
+        </div> -->
+        <!-- settings -->
+
+        <!-- video_player -->
+        <div class="m">
+            <video id="videoPlayer" poster="frontend/vs.png" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                <source src="" type="video/webm" />
+                <track id="vttSource" kind="captions" label="原字幕" src="warehouse/subtitle/yuai.vtt" srclang="en" />
+                <track id="vttSourceZH" kind="captions" label="翻译为中文" src="warehouse/subtitle/yuai.vtt" srclang="zh" />
+            </video>
+        </div>
+        <!-- video_player -->
+
+        <!-- video_gallery -->
+        <div style="float: right; width: 20%; align-items: center;"> 
+			<!-- <button id="add_video_local">+</button> -->
+            <!-- <input type="text" id="searchBar" placeholder="Search videos..." style="width: 200px;"> -->
+            <ul id="videoList">
+                <!-- <li data-video-src="video1.mp4">Video 1</li>
+                <li data-video-src="video2.mp4">Video 2</li>
+                <li data-video-src="video3.mp4">Video 3</li> -->
+                <input type="text" id="inputSource" placeholder="input url here">
+            </ul> 
+
+        </div>
+        <!-- video_gallery -->
+    </div>
+</body>
+<script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
+
+<script src="frontend/dist/main.js" type="module"></script>   
+<script src="frontend/dist/player.js" type="module">
+    // window.player = new Plyr('#videoPlayer', {
+
+    // });
+    // window.player.captions.active = false;
+</script>
+</html>
