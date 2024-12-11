@@ -1,6 +1,6 @@
-/warehouse/video/*
-/warehouse/subtitle/*
-/warehouse/subtitle_zh/*
+_warehouse/video/
+_warehouse/subtitle/
+_warehouse/subtitle_zh/
 __pycache__/
 /.vscode/
 test*
