@@ -3,11 +3,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const videoElement = document.getElementById('videoPlayer');
     const videoList = document.getElementById('videoList');
     const urlElement = document.getElementById("inputSource");
+    const searchElement = document.getElementById("search");
     const vttSourceElement = document.getElementById("vttSource");
     const player = new Plyr('#videoPlayer', {
 
     });
     player.captions.active = false;
+    var downloadVideoLoading;
+    var subtitleLoading;
+    var listLoading;
+    var sendSubtitle = false;
 
 
 
@@ -39,8 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const data = JSON.parse(event.data);
         console.log(data)
         if(data['type'] == 'download'){
+            downloadVideoLoading.close();
             let name = getFileName(data['path']);
-            alert("下载完成:"+name);
+            Qmsg.success("下载完成:"+name);
 
             let li = document.createElement('li');
             li.innerText = name;
@@ -48,15 +54,19 @@ document.addEventListener('DOMContentLoaded', function () {
             videoList.appendChild(li);
         }
         else if(data['type'] == 'transcribe'){
-            alert("字幕生成结束");
-            // console.log(data['path']);
+            subtitleLoading.close();
+            Qmsg.success("字幕生成成功");
             vttSourceElement.src = data['path'];
+            sendSubtitle = false;
         }
         else if(data['type'] == 'translate'){
             alert("中文字幕生成完成");
         }
         else if(data['type'] == 'updateVideoList'){
-            alert("视频列表已更新");
+            listLoading.close();
+            Qmsg.success("视频列表更新",{
+                timeout:1500,
+            });
             let videoPaths = data['videoList'];
             for(let i = 0; i < videoPaths.length; i++){
                 // console.log(videoPaths[i]);
@@ -71,32 +81,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // 语音转录
-    var sendSubtitle = false;
+    var captionEnabled = false;
 
     player.on('ready', (event)=>{
         let currentSubtitlePath = ''; // 记录对应的视频路径
         let currentSubtitlePathZH = '';
         const videoElement = document.getElementById('videoPlayer');
-        let captionEnabled = false;
 
         player.on('captionsenabled', (event)=>{
             let currentVideoPath = videoElement.src;
-            if(currentVideoPath == ''){
+            if(! event.detail.plyr.captions.active){ // 关闭字幕
                 return;
             }
-            if(captionEnabled == false){// 第一次开启字幕会发送两次active信号，这里过滤第一个信号
+            if(currentVideoPath == ''){ // 视频未加载
+                return;
+            }
+            if(captionEnabled == false){ // 第一次开启字幕会发送两次active信号，这里过滤第一个信号
                 captionEnabled = true;
                 return;
             }
-            // console.log(event.detail.plyr);
-            console.log("active");
             if(sendSubtitle){
-                alert("有字幕正在生成，请稍等");
+                Qmsg.warning("有字幕正在生成，请稍后重试");
                 return;
             }
             else{
-                sendSubtitle = true;
-                
                 if(event.detail.plyr.captions.language == "en"){
                     console.log("en");
                     // 判断currentSubtitlePath==currentVideoPath,Y->return,N->sendRequest
@@ -111,7 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             'name': getFileName(currentSubtitlePath),
                         })
                         );
-                        alert("正在生成字幕");
+                        sendSubtitle = true;
+                        subtitleLoading = Qmsg.loading("正在生成字幕");
                     }
                 }
                 else if(event.detail.plyr.captions.language == "zh"){
@@ -120,39 +129,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }       
         });
-        player.on('timeupdate', (event)=>{
-            console.log(videoElement.src);
-        })
     })
 
-
-
-    // 日志
-    // function beautifyLog() {
-    //     $('.text1').textillate({ in: { effect: 'rollIn' } });
-    //     $('.text2').textillate({
-    //         initialDelay: 500, 	//设置动画开始时间
-    //         in: { 
-    //             effect: 'flipInX',	//设置动画名称
-    //             delay: 50,
-    //         }
-    //     });
-    //     $('.text3').textillate({
-    //         initialDelay: 10,
-    //         in: { 
-    //             effect: 'bounceInDown' ,
-    //             delay: 5,
-    //         }
-    //     });
-    // }
-
+    // vttSourceElement.addEventListener('cuechange', (event)=>{
+    //     let cues = event.target.track.activeCues;
+    //     for(let i=0; i<cues.length; i ++){
+    //         console.log(cues[i].text);
+    //     }
+    // });
 
 
 
     // 下载视频
     urlElement.addEventListener('keydown', function(event){
         if (event.code == 'Enter' && urlElement.value != ''){
-            alert("下载视频："+urlElement.value);
+            Qmsg.info("下载视频："+urlElement.value,{
+                timeout:3000,
+            });
             download();
         }
     })
@@ -160,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var videoName = prompt("","给视频取个名字吧");
         
         if (videoName == undefined || videoName == ''){
-            alert("下载取消！");
+            Qmsg.info("下载取消！");
             return;
         }
         
@@ -170,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'name': videoName,
         })
         );
+        downloadVideoLoading = Qmsg.loading("正在下载视频");
     }
 
 
@@ -188,8 +182,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    searchElement.addEventListener('keydown', function(event){
+        if (event.code == 'Enter' && searchElement.value != ''){
+            var items = videoList.getElementsByTagName('li');
+            var inlist = [];
+            var notinlist = []; 
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].innerText.includes(searchElement.value)){
+                    inlist.push(items[i]);
+                }
+                else{
+                    notinlist.push(items[i]);
+                }
+            }
+            videoList.length = 0;
+            for(var i = 0; i < inlist.length; i++){
+                videoList.appendChild(inlist[i]);
+            }
+            for(var i = 0; i < notinlist.length; i++){
+                videoList.appendChild(notinlist[i]);
+            }
+        }
+    });
+
     function updateVideoList() {
-        alert("正在获取视频列表")
+        listLoading = Qmsg.loading("正在获取视频列表")
         // 发送获取视频文件夹下所有文件名称的请求
         socket.send(JSON.stringify({
             'type': 'updateVideoList',
