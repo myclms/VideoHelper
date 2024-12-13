@@ -33,7 +33,7 @@
 3. 启动（每次启动前都要 “conda activate VideoHelper” 激活python虚拟环境）
 
    ```sh
-   bash lauch.sh
+   bash launch.sh
    ```
 
 4. 使用

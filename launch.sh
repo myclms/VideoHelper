@@ -1,5 +1,5 @@
 #!/bin/bash
-source lauchpy.sh &
+source launchpy.sh &
 clipid=$!
 echo "clipid: $clipid"
 sleep 1
