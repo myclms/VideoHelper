@@ -4,6 +4,8 @@ warehouse/subtitle/*
 !warehouse/subtitle/.gitkeep
 warehouse/subtitle_zh/*
 !warehouse/subtitle_zh/.gitkeep
+tmp/*
+!tmp/.gitkeep
 __pycache__/
 /.vscode/
 test*

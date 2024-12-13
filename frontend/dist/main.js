@@ -1,10 +1,13 @@
-export const socket = new WebSocket('ws://localhost:5001'); // 创建WebSocket连接
-
 document.addEventListener('DOMContentLoaded', function () {
+    var socket = new WebSocket('ws://localhost:5001'); // 创建WebSocket连接
     const videoElement = document.getElementById('videoPlayer');
     const videoList = document.getElementById('videoList');
     const urlElement = document.getElementById("inputSource");
     const vttSourceElement = document.getElementById("vttSource");
+    const player = new Plyr('#videoPlayer', {
+
+    });
+    player.captions.active = false;
 
 
 
@@ -26,7 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('连接已关闭');
     };
     socket.onerror = function(error) {
-        console.log('Error: ', error);
+        // console.log('Error: ', error);
+        // console.log("retry connect to py");
+        // setTimeout(function(){;}, 1500);
+        // socket = new WebSocket('ws://localhost:5001');
     };
     // 接收信号
     socket.onmessage = (event) => {
@@ -43,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else if(data['type'] == 'transcribe'){
             alert("字幕生成结束");
+            // console.log(data['path']);
             vttSourceElement.src = data['path'];
         }
         else if(data['type'] == 'translate'){
@@ -52,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("视频列表已更新");
             let videoPaths = data['videoList'];
             for(let i = 0; i < videoPaths.length; i++){
+                // console.log(videoPaths[i]);
                 let li = document.createElement('li');
                 li.innerText = getFileName(videoPaths[i]);
                 li.setAttribute('data-video-src', videoPaths[i]);
@@ -63,7 +71,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // 语音转录
-    // 见player.js
+    var sendSubtitle = false;
+
+    player.on('ready', (event)=>{
+        let currentSubtitlePath = ''; // 记录对应的视频路径
+        let currentSubtitlePathZH = '';
+        const videoElement = document.getElementById('videoPlayer');
+        let captionEnabled = false;
+
+        player.on('captionsenabled', (event)=>{
+            let currentVideoPath = videoElement.src;
+            if(currentVideoPath == ''){
+                return;
+            }
+            if(captionEnabled == false){// 第一次开启字幕会发送两次active信号，这里过滤第一个信号
+                captionEnabled = true;
+                return;
+            }
+            // console.log(event.detail.plyr);
+            console.log("active");
+            if(sendSubtitle){
+                alert("有字幕正在生成，请稍等");
+                return;
+            }
+            else{
+                sendSubtitle = true;
+                
+                if(event.detail.plyr.captions.language == "en"){
+                    console.log("en");
+                    // 判断currentSubtitlePath==currentVideoPath,Y->return,N->sendRequest
+                    if(currentSubtitlePath == currentVideoPath){
+                        console.log("sameEN");
+                        return;
+                    }
+                    else{
+                        currentSubtitlePath = currentVideoPath;
+                        socket.send(JSON.stringify({
+                            'type': 'transcribe',
+                            'name': getFileName(currentSubtitlePath),
+                        })
+                        );
+                        alert("正在生成字幕");
+                    }
+                }
+                else if(event.detail.plyr.captions.language == "zh"){
+                    console.log("zh");
+                    return;
+                }
+            }       
+        });
+        player.on('timeupdate', (event)=>{
+            console.log(videoElement.src);
+        })
+    })
 
 
 
@@ -135,6 +195,5 @@ document.addEventListener('DOMContentLoaded', function () {
             'type': 'updateVideoList',
         }));
     }
-
  
 });

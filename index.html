@@ -71,8 +71,8 @@
             <video id="videoPlayer" poster="frontend/vs.png" controls>
                 <source id="videoSource" src="" type="video/mp4">
                 <source src="" type="video/webm" />
-                <track id="vttSource" kind="captions" label="原字幕" src="warehouse/subtitle/yuai.vtt" srclang="en" />
-                <track id="vttSourceZH" kind="captions" label="翻译为中文" src="warehouse/subtitle/yuai.vtt" srclang="zh" />
+                <track id="vttSource" kind="captions" label="原字幕" src="" srclang="en" />
+                <track id="vttSourceZH" kind="captions" label="中文字幕" src="" srclang="zh" />
             </video>
         </div>
         <!-- video_player -->
@@ -91,14 +91,10 @@
         </div>
         <!-- video_gallery -->
     </div>
+    <script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
+
+    <script src="frontend/dist/main.js"></script>   
+    <!-- <script src="frontend/dist/player.js"></script> -->
 </body>
-<script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
 
-<script src="frontend/dist/main.js" type="module"></script>   
-<script src="frontend/dist/player.js" type="module">
-    // window.player = new Plyr('#videoPlayer', {
-
-    // });
-    // window.player.captions.active = false;
-</script>
 </html>

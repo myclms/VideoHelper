@@ -14,6 +14,7 @@ from faster_whisper import WhisperModel
 
 # video_list
 async def update_video_list(websocket):
+    # 遍历文件夹下全部文件名，发送文件路径
     print("update_video_list")
     video_names = os.listdir(video_dir) # 含后缀名
     # t_dir = video_dir.replace('frontend/','')
@@ -33,11 +34,10 @@ async def download(url:str, name:str):
         return 'fail'
     
 # transcribe
-async def whisper_transcribe(websocket, path_v:str, model_size="large-v2", compute_type="int8"):
+async def whisper_transcribe(websocket, name:str, model_size="large-v2", compute_type="int8"):
     print("whisper_transcribe")
-    path_v = urllib.parse.unquote(path_v)
-    pattern = r'http://[^/]*/'
-    path_v = re.sub(pattern,'', path_v)
+    name = urllib.parse.unquote(name)
+    path_v = video_dir + '/' + name + '.mp4'
     path_s = path_v.replace('video', 'subtitle').replace('mp4', 'vtt')
     if os.path.exists(path_s):
         await websocket.send(json.dumps({'type':types[1],'path':path_s}))
