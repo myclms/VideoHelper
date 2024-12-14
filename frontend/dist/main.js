@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const urlElement = document.getElementById("inputSource");
     const searchElement = document.getElementById("search");
     const vttSourceElement = document.getElementById("vttSource");
+    const vttSourceZHElement = document.getElementById("vttSourceZH");
     const player = new Plyr('#videoPlayer', {
 
     });
@@ -26,18 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 通信
     socket.onopen = function(event) {
-        console.log('连接已打开');
+        Qmsg.success('成功连接到后端');
         updateVideoList(); // 初始化视频列表
 
     };
     socket.onclose = function(event) {
-        console.log('连接已关闭');
+        Qmsg.warning('连接已关闭');
     };
     socket.onerror = function(error) {
-        // console.log('Error: ', error);
-        // console.log("retry connect to py");
-        // setTimeout(function(){;}, 1500);
-        // socket = new WebSocket('ws://localhost:5001');
+        Qmsg.error("无法连接到后端");
     };
     // 接收信号
     socket.onmessage = (event) => {
@@ -60,7 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
             sendSubtitle = false;
         }
         else if(data['type'] == 'translate'){
-            alert("中文字幕生成完成");
+            subtitleLoading.close();
+            Qmsg.success("字幕翻译成功");
+            vttSourceZHElement.src = data['path'];
+            sendSubtitle = false;
         }
         else if(data['type'] == 'updateVideoList'){
             listLoading.close();
@@ -69,18 +70,20 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             let videoPaths = data['videoList'];
             for(let i = 0; i < videoPaths.length; i++){
-                // console.log(videoPaths[i]);
                 let li = document.createElement('li');
                 li.innerText = getFileName(videoPaths[i]);
                 li.setAttribute('data-video-src', videoPaths[i]);
                 videoList.appendChild(li);
             }
         }
+        else if(data['type'] == 'error'){
+            Qmsg.error(data['msg']);
+        }
     };
 
 
 
-    // 语音转录
+    // 语音转录和字幕翻译
     var captionEnabled = false;
 
     player.on('ready', (event)=>{
@@ -125,18 +128,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 else if(event.detail.plyr.captions.language == "zh"){
                     console.log("zh");
-                    return;
+                    // 判断currentSubtitlePath==currentVideoPath,Y->return,N->sendRequest
+                    if(currentSubtitlePathZH == currentVideoPath){
+                        console.log("sameZH");
+                        return;
+                    }
+                    else{
+                        currentSubtitlePathZH = currentVideoPath;
+                        socket.send(JSON.stringify({
+                            'type': 'translate',
+                            'name': getFileName(currentSubtitlePathZH),
+                        })
+                        );
+                        sendSubtitle = true;
+                        subtitleLoading = Qmsg.loading("正在翻译字幕");
+                    }
                 }
             }       
         });
     })
-
-    // vttSourceElement.addEventListener('cuechange', (event)=>{
-    //     let cues = event.target.track.activeCues;
-    //     for(let i=0; i<cues.length; i ++){
-    //         console.log(cues[i].text);
-    //     }
-    // });
 
 
 

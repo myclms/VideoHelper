@@ -13,8 +13,6 @@ async def update_video_list(websocket):
     # 遍历文件夹下全部文件名，发送文件路径
     print("update_video_list")
     video_names = os.listdir(video_dir) # 含后缀名
-    # t_dir = video_dir.replace('frontend/','')
-    # video_paths = [t_dir + '/' + t for t in video_names]
     video_paths = [video_dir + '/' + t for t in video_names if 'mp4' in t]
     
     await websocket.send(json.dumps({'type':types[3],'videoList':video_paths}))
@@ -63,3 +61,8 @@ async def whisper_transcribe(websocket, name:str, model_size="large-v2", compute
                 webvtt_file.write("%02d:%06.3f --> %02d:%06.3f\n" % (start_m, start_s, end_m, end_s))
                 webvtt_file.write(f"{segment.text}\n\n")
         await websocket.send(json.dumps({'type':types[1],'path':path_s}))
+
+async def translate(websocket, name:str, target_lang:str):
+    pass
+    path_s_zh = ''
+    await websocket.send(json.dumps({'type':types[2],'path':path_s_zh}))

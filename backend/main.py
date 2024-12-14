@@ -2,7 +2,7 @@ import asyncio
 import websockets
 import json
 from vars import types, video_dir
-from mylib import update_video_list, download, whisper_transcribe
+from mylib import update_video_list, download, whisper_transcribe, translate
 import sys
 
 
@@ -29,8 +29,7 @@ async def recv_msg(websocket):
             url = recv['url']
             status = await download(url, recv['name'])
             if status != 'success':
-                # await websocket.send(json.dumps({'type':types[0],'file_name':file_name}))
-                pass
+                await websocket.send(json.dumps({'type':types[4],'msg':'下载失败'}))
             else:
                 await websocket.send(json.dumps({'type':types[0],'path':video_dir + '/' + recv['name'] + '.mp4'}))
 
@@ -38,9 +37,7 @@ async def recv_msg(websocket):
             await whisper_transcribe(websocket, recv['name'])
 
         elif type == types[2] :
-            # await update_settings(recv['key'], recv['value'])
-            # await save_settings()
-            pass
+            await translate(websocket, recv['name'], 'zh')
 
         elif type == types[3] :
             await update_video_list(websocket)
