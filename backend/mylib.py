@@ -1,13 +1,9 @@
-import datetime
 import subprocess
 import ffmpeg
 import json
-import pickle
 import urllib
-import re
 import os
 from vars import *
-from datetime import timedelta
 from faster_whisper import WhisperModel
 
 
@@ -28,7 +24,12 @@ async def download(url:str, name:str):
     print("download")
     try:
         result = subprocess.run(['you-get', '-o', video_dir,'-O',name, url], capture_output=True, text=True)
-        return 'success'
+        path_v = video_dir + '/' + name + '.mp4'
+        if os.path.exists(path_v):
+            return 'success'
+        else:
+            print(result.stdout)
+            return 'fail'
     except Exception as ex:
         print(ex)
         return 'fail'
