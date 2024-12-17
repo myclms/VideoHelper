@@ -14,15 +14,13 @@
 
 ![](https://gitee.com/myclms/pictures/raw/master/image-20241214152151193.png)
 
-## 🧪 测试
-
 
 
 ## 🚀 快速开始
 
 1. 克隆本项目或者下载项目文件夹，进入项目目录VideoHelper
 
-2. 配置环境
+2. 配置python环境
 
    ``` bash
    conda create -n VideoHelper python=3.9
@@ -30,7 +28,9 @@
    pip install -r requirements.txt
    ```
 
-3. 启动（每次启动前都要 “conda activate VideoHelper” 激活python虚拟环境）
+3. 下载依赖[Deeplx](https://github.com/OwO-Network/DeepLX/releases)到项目文件夹
+
+3. **linux**下启动（每次启动前都要 “conda activate VideoHelper” 激活python虚拟环境）
 
    ```sh
    bash launch.sh
@@ -42,7 +42,6 @@
 
 5. 退出
 
-   直接关闭网页或者杀死启动shell脚本的进程都可以。
 
  <span id="functions"> </span>
 
@@ -58,7 +57,9 @@
 
 - **视频下载** 使用开源项目you-get，<u>需要联网</u>下载。
 - **字幕生成** 使用本地模型faster-whisper，默认模型规模为**large-v2** 。第一次使用会自动下载模型到默认路径（<u>需要联网</u>），大小大约3G，自动检测GPU。生成速度和电脑配置、视频时长有关。
-- **字幕翻译** 
+- **字幕翻译** 使用开源项目deeplx。是部署到本地的服务。
+
+
 
 ## 💡 项目架构
 
@@ -77,6 +78,8 @@ VideoHelper/
 	├── video/
 	├── subtitle/
 	├── subtitle_zh/
+├── tmp							# 谷歌浏览器运行需要的用户数据目录
+├── deeplx_*_*					# deeplx可执行文件
 ├── index.html					# 前端主页面
 ├── requirements.txt			# 后端所需依赖
 ```
@@ -85,11 +88,20 @@ VideoHelper/
 
 - [you-get](https://github.com/soimort/you-get)
 - [faster-whisper](https://github.com/SYSTRAN/faster-whisper)
+- [deeplx](https://github.com/OwO-Network/DeepLX)
 - [plyr播放器](https://github.com/sampotts/plyr)
 
 
 
 ## 开发日志
+
+2024.12.17
+
+- 使用BootStrap优化前端页面
+
+2024.12.16
+
+- 添加翻译功能
 
 2024.12.13
 
