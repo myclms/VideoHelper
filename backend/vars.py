@@ -1,5 +1,6 @@
-types = ['download', 'transcribe', 'translate', 'updateVideoList', 'error']
+types = ['download', 'transcribe', 'translate', 'updateVideoList', 'error', 'setting', 'translateSetting']
 video_dir = 'warehouse/video'
+config_file = 'config.json'
 
 """
 download:
@@ -54,5 +55,12 @@ error:
     {
         'type': 'error',
         'msg': message : str,
+    }
+
+translateSetting:
+    {
+        'type': 'translateSetting',
+        'modelSize': str,
+        'apiToken': str,
     }
 """

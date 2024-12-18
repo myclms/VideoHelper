@@ -1,96 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Welcome here!</title>
-	<!-- Styles -->
+    <meta charset="utf-8">
+    <title>Welcome here!</title>
     <link rel="stylesheet" href="frontend/dist/message/css/message.css">
-	<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
-	<style>
-		body{
-			background-color: #262626; /* 设置背景颜色 */
-		}
-		.m{ margin-left: auto; margin-right: auto; width: 640px; margin-top: 100px; }
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="frontend/dist/bootstrapmini5.1/bootstrap.css" />
 
-		#videoPlayer {
-			background-color: #262626; /* 设置视频播放区域的背景颜色 */
-		}
-		
-	</style>
-
-	<!-- video list head -->
-	<style>
-        #videoList li {
-            color:#ccc;
-            border-bottom: 2px solid #ccc; /* 添加下划线 */
-            height: 50px; /* 调整行高 */
-            line-height: 30px; /* 调整行高 */
-            padding-bottom: 0; /* 添加内边距 */
-            padding-top: 17px;
-            padding-left: 10px;
-
-            white-space: nowrap; /* 防止文本换行 */
-            overflow: hidden; /* 隐藏超出屏幕范围的文本 */
-            text-overflow: ellipsis; /* 在超出屏幕范围的文本后显示省略号 */
+    <style>
+        .header {
+            background-color: transparent !important;
+            box-shadow: 0px 3px 10px -5px rgb(226, 225, 225);
         }
-        #videoList li:hover {
-            background-color: #161515; /* 鼠标悬停时改变背景颜色 */
-        }
-        #videoList li.active {
+        
+        .text-bold {
             font-weight: bold;
-            color: rgb(238, 81, 13);
-        }	
-
-        #inputSource {
-			padding: 17px;
-			font-size: 16px;
-			border: 2px solid #ccc; /* 设置边框颜色 */
-			border-radius: 2px;
-			box-shadow: none;
-			background-color: transparent; /* 设置背景透明 */
-			margin-right: 20px;
-			color: #ccc; /* 设置输入框的字体颜色 */
-		}
-        #search {
-            padding: 17px;
-			font-size: 16px;
-			border: 2px solid #ccc; /* 设置边框颜色 */
-			border-radius: 2px;
-			box-shadow: none;
-			background-color: transparent; /* 设置背景透明 */
+        }
+        
+        .border {
+            border: 5px solid #ff0000;
+        }
+        
+        .main-body {
+            padding-top: 40px;
+            height: 60vh;
+        }
+        
+        .m {
+            width: 100%;
+            height: 50vh;
             margin-top: 10px;
-			margin-right: 20px;
-			color: #ccc; /* 设置输入框的字体颜色 */
+        }
+        
+        #videoPlayer {
+            object-fit: contain;
+        }
+        
+        #videoList li:hover {
+            color: #00aeec;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+        
+        #videoList li.playing {
+            color: #00aeec;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+        
+        .playing-gif {
+            height: 1rem;
+            display: inline-block;
+        }
+        
+        .none-display {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <div style="display: flex; align-items: stretch;">
-        <!-- video_player -->
-        <div class="m">
-            <video id="videoPlayer" poster="frontend/vs.png" controls>
-                <source id="videoSource" src="" type="video/mp4">
-                <source src="" type="video/webm" />
-                <track id="vttSource" kind="captions" label="原字幕" src="" srclang="en" />
-                <track id="vttSourceZH" kind="captions" label="中文字幕" src="" srclang="zh" />
-            </video>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light header">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <span class="navbar-brand text-bold">VideoHelper</span>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://github.com/myclms/VideoHelper" target="_blank">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Settings
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#translateModal">Translate</button>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li class="dropdown-item"> ... </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Modal -->
+                <div class="modal fade" id="translateModal" tabindex="-1" aria-labelledby="translateLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="translateLabel">Translate Settings ( using ZhiPu AI )</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                model_size
+                                <select id="modelSize" class="form-select" aria-label="Default select example">
+                                    <option value="glm-4-plus">glm-4-plus</option>
+                                    <option value="glm-4-0520">glm-4-0520</option>
+                                    <option value="glm-4">glm-4</option>
+                                    <option value="glm-4-air">glm-4-air</option>
+                                    <option value="glm-4-airx">glm-4-airx</option>
+                                    <option value="glm-4-long">glm-4-long</option>
+                                    <option value="glm-4-flashx">glm-4-flashx</option>
+                                    <option value="glm-4-flash">glm-4-flash</option>
+                                </select> api_token
+                                <input id="apiToken" class="form-control me-2" type="search" placeholder="api_token" aria-label="Search">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button id="translateSetting" type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <input id="url" class="form-control me-2" type="text" placeholder="Download">
+                    <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#nameItModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                        </svg>
+                    </button>
+                    <div class="modal fade" id="nameItModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Please make a name for this video</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input id="name" class="form-control me-2" type="search" placeholder="Name" aria-label="Search">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <button id="download" type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </nav>
+    <!-- videoPlayer and videoList -->
+    <div class="container">
+        <div class="row">
+            <div class="col-8 main-body">
+                <h2 id="videoName" style="overflow-x: hidden; margin-bottom: 10px;">Video Name</h2>
+                <div class="m">
+                    <video id="videoPlayer" autoplay="false" poster="frontend/vs.jpg" playsinline controls>
+                        <source id="videoSource" src="" type="video/mp4">
+                        <track id="vttSource" kind="captions" label="原字幕" src="" srclang="en" />
+                        <track id="vttSourceZH" kind="captions" label="中文字幕" src="" srclang="zh" />
+                    </video>
+                </div>
+            </div>
+            <div class="col-4 main-body">
+                <div class="card" style="width: 95%;">
+                    <div class="card-header">
+                        <input class="form-control me-2" type="text" id="search" placeholder="  Search Downloaded Video  " style="width: 100%;">
+                    </div>
+                    <ul id="videoList" class="list-group list-group-numbered">
+                        <!-- <li class="list-group-item">
+                            <img class="playing-gif none-display" src="frontend/playing.gif" /> An item
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
-        <!-- video_player -->
-        <!-- video_gallery -->
-        <div style="float: right; width: 20%; align-items: center; padding-right: 20px;"> 
-            <ul id="videoList" style="display: grid;">
-                <!-- <li data-video-src="video1.mp4">Video 1</li>
-                <li data-video-src="video2.mp4">Video 2</li>
-                <li data-video-src="video3.mp4">Video 3</li> -->
-                <input type="text" id="inputSource" placeholder="input url of website including one video">
-                <input type="text" id="search" placeholder="search downloaded video" style="font-weight: bold;">
-            </ul> 
-        </div>
-        <!-- video_gallery -->
     </div>
+
+
+    <!-- <script src="frontend/dist/jquery-3.7.1.min.js"></script> -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="frontend/dist/message/js/message.js"></script>
+    <script src="frontend/dist/bootstrapmini5.1/bootstrap.min.js"></script>
+    <script src="frontend/dist/main.js"></script>
+
 </body>
-<script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
-<script src="frontend/dist/message/js/message.js"></script>
-<script src="frontend/dist/main.js"></script>  
+
 </html>

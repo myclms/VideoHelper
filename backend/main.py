@@ -2,13 +2,14 @@ import asyncio
 import websockets
 import json
 from vars import types, video_dir
-from mylib import update_video_list, download, whisper_transcribe, translate
+from mylib import update_video_list, download, whisper_transcribe, translate, update_translate_setting, init_setting
 import sys
 
 
 
 # 接收客户端消息并处理
 async def recv_msg(websocket):
+    await init_setting(websocket)
     while True:
         try:
             recv = await websocket.recv()
@@ -41,7 +42,9 @@ async def recv_msg(websocket):
 
         elif type == types[3] :
             await update_video_list(websocket)
-            
+
+        elif type == types[6] :
+            await update_translate_setting(websocket, recv['modelSize'], recv['apiToken'])
 
         # response_text = f"your submit context: {recv_text}"
         # await websocket.send(response_text)

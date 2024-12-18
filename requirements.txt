@@ -2,3 +2,6 @@ you-get
 faster-whisper
 websockets
 ffmpeg-python
+zhipuai
+subprocess
+urllib
